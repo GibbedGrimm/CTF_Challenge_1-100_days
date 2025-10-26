@@ -1,0 +1,2 @@
+from scripts import base64decoder
+print(base64decoder.b64d("cGljb0NURntwdXp6bDNkX20zdGFkYXRhX2YwdW5kIV8zNTc4NzM5YX0="))
