@@ -12,4 +12,4 @@ env/
 secret/
 /secret/
 /.idea/
-rockyou.txt
+/tasks/picoCTF/8.hashcrack/rockyou.txt
