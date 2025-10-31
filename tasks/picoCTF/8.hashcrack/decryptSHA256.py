@@ -1,6 +1,6 @@
 import hashlib
 
-target = "b7a875fc1ea228b9061041b7cec4bd3c52ab3ce3"
+target = "916e8c4f79b25028c9e467f1eb8eee6d6bbdff965f9928310ad30a8d88697745"
 
 
 with open("rockyou.txt","rb") as f:
@@ -18,3 +18,4 @@ with open("rockyou.txt","rb") as f:
             print("Пароль не найден в файле.")
 
 
+#916e8c4f79b25028c9e467f1eb8eee6d6bbdff965f9928310ad30a8d88697745
