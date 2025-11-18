@@ -7,7 +7,7 @@ def mod_inverse(a, m):
     return None
 
 plaintext = "CHEDDAR" # you can use other cheese name here
-ciphertext = "ALUXXGH" # with respected cipher text
+ciphertext = "ZCVKKDI" # with respected cipher text
 
 # Convert letters to numbers (A=0, B=1, ..., Z=25)
 plaintext_val = [ord(c) - ord('A') for c in plaintext]

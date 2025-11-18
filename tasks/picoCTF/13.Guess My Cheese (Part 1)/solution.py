@@ -1,24 +1,30 @@
-from math import gcd
 
-with open("cheese.txt") as f:
-    ct = f.readline().strip()     # например DKLUUVY
-    pt = f.readline().strip()     # например cheddar
-    ctFlag = f.readline().strip() # например CYZRVTLGCYVBPKUE
-ct = ct.lower()
-alphabet = "abcdefghijklmnopqrstuvwxyz"
+ct = "KPMLLIZ"
+ctf = "ILMTWABONT"
+#RAGDYQFPQFYAZFNDUEAZIFH
+pt = 'CHEDDAR'
+ptf = ''
+alphabet = 'abcdefghijklmnopqrstuvwxyz'.upper()
+indexed = {c:i for i,c in enumerate(alphabet)}
+x1,y1 = indexed[pt[0]],indexed[ct[0]]
+x2,y2 = indexed[pt[1]],indexed[ct[1]]
+diffx = (x1-x2)%26
+diffy = (y1-y2)%26
+invdiffx = pow(diffx,-1,26)
+a = (invdiffx*diffy)%26
+b = (y1-x1*a) %26
+inva = pow(a,-1,26)
+for i in range(len(ct)):
 
-charToIndex = {c: i for i, c in enumerate(alphabet)}
+    x = indexed[pt[i]]
+    y = (x*a+b)%26
+    if ct[i] != alphabet[y]:
+        print('Ошибка',ct[i],alphabet[y],x,y,a,b)
+        break
+else:
+    for i in range(len(ctf)):
+        y = indexed[ctf[i]]
+        x = (((y-b)%26)*inva)%26
 
-m = 26
-x1,y1 = charToIndex[pt[0]],charToIndex[ct[0]]
-x2,y2 = charToIndex[pt[1]],charToIndex[ct[1]]
-
-#(y1-y2) = a * (x1-x2) mod 26
-diffX = (x1-x2)%m
-diffY = (y1-y2)%m
-
-invDiffX = pow(diffX,-1,m)
-a = (diffY*invDiffX)%m
-
-b = (y1 -(x1*a))%m
-print(a,b)
+        ptf+=alphabet[x]
+print(ptf)
