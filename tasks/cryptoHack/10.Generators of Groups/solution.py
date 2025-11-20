@@ -1,20 +1,13 @@
 from sympy import *
+import math
 m = 28151
-f = []
-numToCheck = []
-for i in range(m):
-    f.append(i)
-    numToCheck.append(i)
+p1 = (m-1)//2
+p2 = (m-1)//5
+p3 = (m-1)//563
+p4 = (m-1)//25
 
-for i in numToCheck:
-    check = f.copy()
-    print("Проверенно",i)
-    for j in range(m):
-        num = pow(i,j,m)
-        if num not in check:
-
-            break
-        check.remove(num)
+for i in range(1,m+1):
+    if pow(i,p1,m) == 1 or pow(i,p2,m) == 1 or pow(i,p3,m) == 1 or pow(i,p4,m) == 1:
+        continue
     else:
         print(i)
-        break
